@@ -1,15 +1,20 @@
+import React, { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Image, ScrollView } from 'react-native';
+import { Button } from 'react-native';
+import Main from './Components/Main';
+// import fileImag from "./assets/file-sharing.jpg";
 
 export default function App() {
+  const [clr, setClr] = useState("red");
+
   return (
-    <View>
+    <View style={{ backgroundColor: "rgba(0, 0, 0, .2)", height: "100%" }}>
+      <StatusBar style='auto'></StatusBar>
       <View style={styles.navBar}>
-        <Text style={styles.headline}>File sharing</Text>
+        <Text style={[styles.headline, {backgroundColor: clr} ]}>File sharing</Text>
       </View>
-      <TouchableOpacity onPress={() => alert("Hello World!!")} style={styles.btn}>
-        <Text style={styles.btnText}>Click Here</Text>
-      </TouchableOpacity>
+      <Main btnStyle={styles.btn} />
     </View>
   );
 }
@@ -27,16 +32,18 @@ const styles = StyleSheet.create({
   headline: {
     textAlign: "center",
     fontSize: 20,
+    color: "white",
     fontWeight: "600"
   },
   btn: {
-    backgroundColor: "blue",
+    paddingLeft: "35%",
+    backgroundColor: "white",
+    borderWidth: 2,
+    borderColor: "green",
     padding: 20,
-    marginTop: 20
-  },
-  btnText: {
-    backgroundColor: "red", 
-    color: "white", 
-    fontSize: 20
+    marginTop: 20,
+    color: "white",
+    fontSize: 20,
+    fontWeight: "600"
   }
 })
