@@ -4,12 +4,11 @@
     "slug": "expo-file-sharing",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/icon-1.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "image": "./assets/splash.jpg",
+      "resizeMode": "contain"
     },
     "updates": {
       "fallbackToCacheTimeout": 0

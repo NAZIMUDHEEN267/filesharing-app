@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, Image, StyleSheet, TouchableOpacity, Platform } from "react-native";
+import { View, Text, Image, StyleSheet, TouchableOpacity, Platform, ImageBackground } from "react-native";
 import * as ImagePicker from "expo-image-picker";
 import * as imageShare from "expo-sharing";
 import * as imageManipulator from "expo-image-manipulator";
@@ -42,9 +42,9 @@ function Main({ btnStyle }) {
     } else {
         return (
             <View style={styles.centerBox}>
-                <View style={styles.image}>
+                <ImageBackground style={styles.image} source={{uri: sample}}>
                     <Image source={{ uri: img }} style={{ height: '100%', width: "100%" }} />
-                </View>
+                </ImageBackground>
                 <TouchableOpacity onPress={imagePickerAsync} style={btnStyle}>
                     <Text>Click Me</Text>
                 </TouchableOpacity>
@@ -56,12 +56,13 @@ function Main({ btnStyle }) {
 
 const styles = {
     centerBox: {
+        backgroundColor: "blue",
         width: 200,
         height: 200,
-        backgroundColor: "blue"
     },
     image: {
-        padding: 10
+        padding: 10,
+        
     }
 }
 
