@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TouchableOpacity, Image, ScrollView } from 'react-native';
-import { Button } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Image, ScrollView, Platform } from 'react-native';
 import Main from './Components/Main';
-// import fileImag from "./assets/file-sharing.jpg";
+
 
 export default function App() {
   const [clr, setClr] = useState("red");
@@ -12,9 +11,11 @@ export default function App() {
     <View style={{ backgroundColor: "rgba(0, 0, 0, .2)", height: "100%" }}>
       <StatusBar style='auto'></StatusBar>
       <View style={styles.navBar}>
-        <Text style={[styles.headline, {backgroundColor: clr} ]}>File sharing</Text>
+        <Text style={[styles.headline, { backgroundColor: clr }]}>File sharing</Text>
       </View>
-      <Main btnStyle={styles.btn} />
+      <View style={styles.container}>
+        <Main btnStyle={styles.btn} />
+      </View>
     </View>
   );
 }
@@ -34,6 +35,11 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: "white",
     fontWeight: "600"
+  },
+  container: {
+    flex: .8,
+    alignItems: "center",
+    justifyContent: 'center',
   },
   btn: {
     paddingLeft: "35%",
