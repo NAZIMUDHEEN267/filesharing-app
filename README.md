@@ -2,9 +2,9 @@
 This is just a filesharing app builded with react-native and expo libraries
 
 # Preview
-![](/preview/one.jpg)
-![](/preview/two.jpg)
-![](/preview/three.jpg)
+![](/screen-1.jpg.jpg)
+![](/screen-2.jpg.jpg)
+![](/screen-3.jpg.jpg)
 
 # Used Technologies
 1. React-Native
